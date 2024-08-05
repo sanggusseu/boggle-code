@@ -1,8 +1,8 @@
 {
   "name": "start-page",
   "version": "0.0.1",
-  "description": "A Quasar Project",
-  "productName": "Quasar App",
+  "description": "검색에만 집중할 수 있도록 만든 시작 페이지",
+  "productName": "Boggle",
   "author": "sanggusseu <sanggusseu@gmail.com>",
   "private": true,
   "scripts": {
