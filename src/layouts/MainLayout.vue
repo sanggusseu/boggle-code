@@ -11,15 +11,18 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title> Quasar App </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        <q-toolbar-title> Boggle </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
+    <q-drawer v-model="leftDrawerOpen" bordered>
       <q-list>
-        <q-item-label header> Essential Links </q-item-label>
+        <q-item-label header> 페이지 이동 </q-item-label>
+
+        <PageLink v-for="page in pagesList" :key="page.title" v-bind="page" />
+      </q-list>
+      <q-list>
+        <q-item-label header> 추천 사이트 </q-item-label>
 
         <EssentialLink
           v-for="link in linksList"
@@ -29,7 +32,7 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container class="window-height">
       <router-view />
     </q-page-container>
   </q-layout>
@@ -38,53 +41,33 @@
 <script setup>
 import { ref } from 'vue';
 import EssentialLink from 'components/EssentialLink.vue';
+import PageLink from 'src/components/PageLink.vue';
 
 defineOptions({
   name: 'MainLayout',
 });
 
+const pagesList = [
+  {
+    title: '검색',
+    caption: '검색 페이지',
+    icon: 'search',
+    to: '/',
+  },
+];
+
 const linksList = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev',
+    title: '멋진 헛간',
+    caption: '유용한 사이트 모음',
+    icon: 'star',
+    link: 'https://sanggusseu.github.io/bookmark/',
   },
   {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework',
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev',
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev',
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev',
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev',
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev',
+    title: '명언 제조기',
+    caption: '명언처럼 보이게 만들어 주는 사이트',
+    icon: 'edit',
+    link: 'https://sanggusseu.github.io/make-quote/',
   },
 ];
 
