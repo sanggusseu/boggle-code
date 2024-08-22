@@ -1,41 +1,16 @@
-# Quasar App (start-page)
+# Boggle
 
-A Quasar Project
+[![홈 이미지](https://sanggusseu.github.io/boggle/og-image.jpg)](https://sanggusseu.github.io/boggle/)
 
-## Install the dependencies
-```bash
-yarn
-# or
-npm install
-```
+## ✨ 프로젝트 소개
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
+- Boggle은 자극적인 콘텐츠에 쉽게 노출되는 것을 방지하고자 만든 심플한 검색 플랫폼입니다. 사용자가 특정 플랫폼에 얽매이지 않고 다양한 검색 엔진을 활용해 자신에게 필요한 정보를 찾을 수 있도록 도와줍니다. 직관적인 인터페이스를 통해 구글, 네이버, 유튜브 등에서 원하는 검색을 빠르고 간편하게 수행할 수 있으며, 집중력 있는 검색 환경을 제공합니다.
 
+## 🛠 사용한 기술
 
-### Lint the files
-```bash
-yarn lint
-# or
-npm run lint
-```
+- **Quasar** - Vue.js 기반의 퀘이사 프레임워크를 사용하여, 빠르고 반응형인 웹 프론트엔드를 구성하였습니다.
 
+## 🚀 주요 기능
 
-### Format the files
-```bash
-yarn format
-# or
-npm run format
-```
-
-
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+- **다양한 검색 플랫폼**: 구글, 네이버, 유튜브 등 주요 플랫폼을 사용자가 선택할 수 있습니다. 선택 후 검색어를 입력하면 해당 플랫폼에서의 검색 결과가 새 창으로 열립니다.
+- **최근 검색 플랫폼 저장**: `localStorage`를 활용해 사용자가 마지막으로 선택한 검색 플랫폼을 저장합니다. 이를 통해 사이트를 재방문 시, 이전의 검색 환경이 자동으로 복원되어 더욱 편리한 사용 경험을 제공합니다.
